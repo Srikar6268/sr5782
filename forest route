@@ -1,0 +1,54 @@
+c=int(input())
+l=[]
+for i in range(c):
+     x,y=map(int,input().split())
+     l.append((x,y))
+q=int(input())
+for i in range(q):
+    a,b=input().split()
+    a=int(a)
+    if b=='x':
+        print(l[a][0])
+    else:
+        print(l[a][1])
+
+        '''You are walking through a forest, and keeping track of the coordinates of checkpoints. Eventually, you decide you would like to turn back and go home. Can you remember how to get back?
+
+Input Format
+
+The first line of input will be the number of checkpoints C. The next lines will be 2 checkpoint coordinates Cx and Cy. The next line will be the number of queries Q. The next Q lines will be queries in the format of the checkpoint number and the coordinate requested. The checkpoints will be counted starting from 0.
+
+Constraints
+
+1 <= C <= 20
+
+-10 <= Cx,Cy <= 10
+
+1 <= Q <= 20
+
+Output Format
+
+For each query, print the value of the coordinate queried.
+
+Sample Input 0
+
+6
+-9 2
+2 7
+-8 6
+-7 -9
+-8 -3
+-6 0
+5
+2 x
+4 x
+3 y
+1 x
+3 y
+Sample Output 0
+
+-8
+-8
+-9
+2
+-9'''
