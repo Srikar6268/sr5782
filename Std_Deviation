@@ -30,7 +30,16 @@ Sample Output 0
 2.00'''
 
 
-
+import math
+n=int(input())
+a=list(map(int,input().split()))
+sum=sum(a)
+mean=sum/n
+s=0
+for i in a:
+              s=s+abs(i-mean)**2
+k=math.sqrt(s/n)
+print("{:.2f}".format(k))
 
 
 
