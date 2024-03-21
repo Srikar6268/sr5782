@@ -1,0 +1,12 @@
+n = int(input())
+li = list(map(int, input().split()))
+sfs = []
+
+#print(li)
+for i in range(len(li)):
+    sufsum = sum(li[i+1:])  
+    sfs.append(sufsum)
+
+print(' '.join(map(str, sfs)))
+    
+'''suffix sum'''  
