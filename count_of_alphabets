@@ -1,0 +1,15 @@
+tc=int(input())
+for i in range(tc):
+    string=input()
+    counter=0
+    for cr in string:
+        if (65 <= ord(cr)<=90 or 97<= ord(cr) <= 122) :
+            counter+=1
+    print(counter)
+
+
+
+  
+            '''In a parallel universe, a character is said to be valid if it is a alphabetic character else invalid, i.e. if it belongs to a-z or A-Z then it is valid else invalid.
+
+Given a string S consisting of random characters(alphabets, numbers, special symbols, spaces), your task is to output the number of valid characters present in the string.'''
