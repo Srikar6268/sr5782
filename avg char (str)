@@ -1,0 +1,31 @@
+n=int(input())
+li=[0]*n
+avg=0
+for i in range(n):
+    li[i]=input()
+for i in li:
+    avg=0
+    sum=0
+    for j in i:
+        x=int(ord(j))
+        sum+=x
+    avg=sum//(len(i))
+    avg=abs(avg)
+    print(chr(avg))
+
+
+
+'''to print avg char of a particular string
+Given a string S of length N, your task is to compute the average character. If the average character lies between two integer ASCII values, return the smaller one.
+
+Input Format
+
+First line consists of T - the number of testcases.
+
+Next T lines consists of T testcases, one per line. Each testcase consists of a string S.
+
+Constraints
+
+1 <= len(S) <= 10^4
+
+The string S consists of only printable characters.'''
