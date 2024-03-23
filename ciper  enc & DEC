@@ -1,0 +1,86 @@
+'''
+
+
+
+One of the first known examples of data secrecy was used by Julius Caesar. Lets explore an Additive/Caesar Cipher. In Caesar cipher, an additive integer k is used as key by both parties and modulus is fixed to 26.
+
+Encryption Algorithm
+
+Encode each letter of message M as relative index(i.e.,a=0, b=1, ...,z=25)
+Add k to each number with wraparound
+Decode each number back to corresponding letter
+Ex: k = 21
+    
+plaintext: a  n  d  y  o  u  t  o  o  b  r  u  t  u  s
+numbers:   0 13  3 24 14 20 19 14 14  1 17 20 19 20 18
+plus 21:  21  8 24 19  9 15 14  9  9 22 12 15 14 15 13
+ciphertext:v  i  y  t  j  p  o  j  j  w  m  p  o  p  n
+Decryption Algorithm
+
+Encode each letter of ciphertext as relative index(i.e.,a=0, b=1, ...,z=25)
+Subtract k from each number with wraparound
+Decond each number back to corresponding letter
+Ex: k = 21
+    
+ciphertext:v  i  y  t  j  p  o  j  j  w  m  p  o  p  n
+numbers:  21  8 24 19  9 15 14  9  9 22 12 15 14 15 13
+minus 21:  0 13  3 24 14 20 19 14 14  1 17 20 19 20 18
+plaintext: a  n  d  y  o  u  t  o  o  b  r  u  t  u  s
+Your task is to perform encryption or decryption operations using Caeser cipher.
+
+Input Format
+
+First line consists of N - the number of operations.
+Next N lines consists of N operations, one per line. An operation could be one of following:
+ENC k plaintext
+DEC k ciphertext
+Constraints
+
+1 <= len(M) <= 10^4
+0 <= k <= 10^3
+Message consists of only lowercase alphabet
+Output Format
+
+For each ENC operation, output the sequence of characters of cipher text in a line.
+For each DEC operation, output the sequence of letters of plain text in a line.
+Sample Input 0
+
+3
+ENC 21 andyoutoobrutus
+ENC 30 helloworld
+DEC 21 viytjpojjwmpopn
+Sample Output 0
+
+viytjpojjwmpopn
+lippsasvph
+andyoutoobrutus
+'''
+
+
+
+import string
+def ENC(alps,s,key):
+    for i in s:
+        x=alps.index(i)
+        x+key
+        print(alps[x],end=" ")
+        
+def DEC(alps,s,key):
+    for i in s:
+        x=alps.index(i)
+        x-key
+        print(alps[x],end=" ")
+        
+        
+alps=list(string.ascii_lowercase)
+#print(alps)
+opn,key,s=input().split()
+if opn=='ENC':
+    ENC(alps,s,key)
+if opn=='DEC':
+    DEC(alps,s,key)
+
+        
+        
+        
+    
