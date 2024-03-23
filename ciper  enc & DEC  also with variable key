@@ -80,6 +80,49 @@ if opn=='ENC':
 if opn=='DEC':
     DEC(alps,s,key)
 
+
+
+
+
+
+
+
+
+
+
+"""variable key"""
+import string
+def ENC(alps,s,key):
+    for i,j in zip(s,key):
+        x=alps.index(i)
+        y=alps.index(j)
+        z=x+y
+        z=z%26
+        print(alps[z],end="")
+    print()
+        
+def DEC(alps,s,key):
+    for i,j in zip(s,key):
+        x=alps.index(i)
+        y=alps.index(j)
+        z=x-y
+        z=z%26
+        print(alps[z],end="")
+    print()
+        
+        
+alps=list(string.ascii_lowercase)
+#print(alps)
+n=int(input())
+for i in range(n):
+    opn,key,s=input().split()
+    if opn=='ENC':
+        ENC(alps,s,key)
+    if opn=='DEC':
+        DEC(alps,s,key)
+
+        
+
         
         
         
