@@ -1,0 +1,39 @@
+'''
+Run-length Encoding(RLE) is one of the simplest encoding schemes used to compress text data. In RLE, consecutive occurrences of the same characters of text M are replaced by a single character followed by its frequency. As an example, the text AABBBBDAA would be encoded to A2B4D1A2.
+
+Your task is to perform encoding or decoding operations using RLE.
+'''
+
+
+
+import re
+def ENC(s, c):
+    fnls = ""
+    for i in range(len(s)):
+        if i == len(s) - 1 or s[i] != s[i + 1]:
+            fnls += s[i] + str(c)
+            c = 1
+        else:
+            c += 1
+    print(fnls)
+def DEC(s):
+    flst=[]
+    
+    matches = re.findall(r'([a-zA-Z])(\d+)', s)
+    for match in matches:
+        character = match[0]
+        numbers = int(match[1])
+        flst.append(character)
+        flst.append( numbers)
+    #print(flst)
+    for i in range(0,len(flst),2):
+        print(flst[i]*flst[i+1],end='')
+    print()
+    
+n = int(input())
+for _ in range(n):
+    oprn, s = input().split()
+    if oprn == "ENC":
+        ENC(s, 1) 
+    if oprn == "DEC":
+        DEC(s)
