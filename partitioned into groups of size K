@@ -1,0 +1,51 @@
+'''A string s can be partitioned into groups of size K using the following procedure:
+
+The first group consists of the first K characters of the string, the second group consists of the next K characters of the string, and so on. Each character can be a part of exactly one group.
+For the last group, if the string does not have K characters remaining, a character fill is used to complete the group.
+Note that the partition is done so that after removing the fill character from the last group (if it exists) and concatenating all the groups in order, the resultant string should be S.
+
+Given the string S, the size of each group K and the character-fill C, return a string array denoting the composition of every group S has been divided into, using the above procedure.
+
+Input Format
+
+Single line consits of S, K and C.
+
+Constraints
+
+1 <= K, len(S) <= 10^2
+
+S consists of lowercase alphabet only.
+
+C is also a lower case alphabet.
+
+Output Format
+
+A single line with space separated partitions.
+
+Sample Input 0
+
+abcdefghi 3 x
+Sample Output 0
+
+abc def ghi
+'''
+s, key, ch = input().split()
+key = int(key) 
+x = ''
+#print(s)
+for i in s:
+    x += i
+    if len(x) == key:
+        print(x, end=' ')
+        x = ''
+
+if len(s)%key!=0:
+    if len(x) < key:
+        y = key - len(x)
+        x += int(y) * ch
+        print(x) 
+        x=''
+
+
+
+
