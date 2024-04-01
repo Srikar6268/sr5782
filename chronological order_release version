@@ -1,0 +1,38 @@
+code:
+n=int(input())
+li=[]
+k=[]
+for _ in range(n):
+    stn=input().split('-')
+    x=list(stn[1].split('.'))
+    if len(x)>3:
+        k.append(x)
+    else:
+        li.append(list(map(int,x)))
+k.sort()
+li.sort()
+for i in li:
+    for j in k:
+        if i==list(map(int,j[:3])):
+            print('release-',j[0],'.',j[1],'.',j[2],'.',j[3],sep='')
+    print('release-',i[0],'.',i[1],'.',i[2],sep='')
+'''
+Write a program to sort a given sequence of N versions by chronological order. Each version number starts with 'release-' follwed by three fields major, minor and patch with '.' separation(release-major.minor.patch). The '.' character separates fields and it is not a decimal point. Some versions may be pre-released and have suffix ".rcN", rc stands for release candidate and N is an integer.
+
+Input Format
+
+First line consists of number N.
+
+Next N lines consists of names of N versions respectively.
+
+Constraints
+
+1 <= N <= 10^3
+
+Output Format
+
+Output N lines consisting of N versions, after sorting.
+
+Sample Input 0
+
+'''
