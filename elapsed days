@@ -1,0 +1,15 @@
+"""elapsed days"""
+"""code"""
+def cjday(year, month, day):
+    if month <= 2:
+        year -= 1
+        month += 12
+    A = year // 100
+    B = 2 - A + (A // 4)
+    JD = (int(365.25 * (year + 4716))) + (int(30.6001 * (month + 1))) + day + B - 1524.5
+    return JD
+date=input()
+year,mon,day=map(int,date.split(":"))
+jdip = cjday(year,mon,day)
+jdip=2451544.5-jdip
+print(abs(int(jdip)))
