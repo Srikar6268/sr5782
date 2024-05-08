@@ -1,0 +1,26 @@
+"Queen Threat"
+li = []
+for _ in range(8):
+    x = list(input())
+    li.append(x)
+
+il = [(1, 1), (-1, -1), (0, 1), (0, -1), (1, 0), (-1, 0), (1, -1), (-1, 1)]
+
+for row_index, row in enumerate(li):
+    if "*" in row:
+        column_index = row.index("*")
+        break
+
+el = []
+for direction in il:
+    nr, nc = direction
+    ir = row_index + nr
+    ic = column_index + nc
+    while 0 <= ir < 8 and 0 <= ic < 8:
+        el.append(li[ir][ic])
+        ir += nr
+        ic += nc
+if "*" in el:
+    print("Attacking")
+else:
+    print("NotAttacking")
