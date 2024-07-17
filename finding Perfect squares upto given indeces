@@ -1,0 +1,21 @@
+"""Finding no of Perfect squares upto given indeces"""
+
+
+
+import math
+n,q=map(int,input().split())
+x=list(map(int,input().split()[0:n]))
+cl=[0]*n
+for i in range(n):
+    if math.sqrt(x[i]).is_integer():
+        cl[i]=1
+# print(cl)
+sl=[0]*(n+1)
+for i in range(len(cl)):
+    sl[i+1]=sl[i]+cl[i]
+# print(sl)     
+for _ in range(q):
+    l,r=map(int,input().split())
+    print(sl[r+1]-sl[l])
+
+    
